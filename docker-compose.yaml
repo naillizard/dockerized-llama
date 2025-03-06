@@ -43,7 +43,7 @@ services:
     entrypoint: /bin/sh
     command:
       - "-c"
-      - "sleep 3; OLLAMA_HOST=ollama:11434 ollama pull llama3.1"
+      - "sleep 3; OLLAMA_HOST=ollama:11434 for m in llama3.2 deepseek-r1 deepseek-coder deepseek-coder-v2; do ollama pull $m; done"
     depends_on:
       - ollama
 
